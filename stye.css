@@ -1,33 +1,64 @@
-script.js 
-// Captura o elemento do formulário pelo ID
-const form = document.getElementById('formContato');
+body{
+    margin: 0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+main{
+    margin-left: 20px;
+    margin-right: 20px;
+}
 
-// Cria uma escuta para o evento de envio (submit)
-form.addEventListener('submit', function(event) {
-    // Evita que a página recarregue (comportamento padrão)
-    event.preventDefault();
+h1{
+    text-align: center;
+}
+.banner ul{
+    list-style: none;
+    background-color: #102525;
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.banner a{
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+    text-align: center;
+}
+.banner a:hover{
+    background-color: black;
+}
+.banner li{
+    float: left
+}
+.contato {
+  max-width: 500px;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 
-    // Captura os valores digitados e remove os espaços em branco no início/fim
-    const nome = document.getElementById('nome').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const mensagem = document.getElementById('mensagem').value.trim();
+.contato input,
+.contato textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
 
-    // Regra 1: Verifica se algum campo está vazio
-    if (nome === '' || email === '' || mensagem === '') {
-        alert('Erro: Todos os campos (nome, e-mail e mensagem) devem ser preenchidos!');
-        return; // Interrompe a execução
-    }
+.contato button {
+  padding: 10px;
+  background: green;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
 
-    // Regra 2: Verifica o formato do e-mail usando expressão regular (Regex)
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-        alert('Erro: Por favor, informe um endereço de e-mail válido (ex: usuario@dominio.com).');
-        return; // Interrompe a execução
-    }
+.contato button:hover {
+  background: darkgreen;
+}
 
-    // Regra 3: Simula o envio com sucesso
-    alert('Mensagem enviada com sucesso!');
-    
-    // Limpa todos os campos do formulário
-    form.reset();
-});
+
+
+
